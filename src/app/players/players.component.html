@@ -1,8 +1,36 @@
-<article>
+
 <h1>Players</h1>
 <h2>This is a list of all the registered players:</h2>
 
 
-
-
-</article>
+<button type="button" class="btn btn-success addBtn" ><i class="fas fa-plus"></i> Add new Player</button>
+<table class="table" *ngIf="players && players.length > 0">
+  <thead>
+      <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Sex</th>
+          <th scope="col">First Name</th>
+          <th scope="col">Last Name</th>
+          <th scope="col">Birthdate</th>
+          <th scope="col">Club</th>
+          <th scope="col">Nationality</th>
+          <th scope="col">Actions</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr *ngFor="let player of players">
+          <th scope="row">{{player.playerId}}</th>
+          <td>{{player.sex}}</td>
+          <td>{{player.first_name}}</td>
+          <td>{{player.family_name}}</td>
+          <td>{{player.birthDate}}</td>
+          <td>{{player.clubName}}</td>
+          <td>{{player.nation_name}}</td>
+         
+          <td>
+              <button type="button" class="btn btn-success" ><i class="fas fa-edit"></i></button>
+              <button type="button" class="btn btn-danger" (click)="delete(player)"><i class="far fa-trash-alt"></i></button>
+          </td>
+      </tr>
+  </tbody>
+</table>
