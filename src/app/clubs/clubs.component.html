@@ -1,0 +1,27 @@
+<h1>Clubs</h1>
+<h2>This is a list of all the registered Clubs:</h2>
+
+
+<table class="table" *ngIf="clubs && clubs.length > 0">
+  <thead>
+      <tr>
+          <th scope="col">club-Id</th>
+          <th scope="col">Name</th>
+          <th scope="col">County</th>
+          <th scope="col">State</th>
+          <th scope="col">Greater Region</th>
+          <th scope="col">Nation</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr *ngFor="let club of clubs">
+          <th scope="row">{{club.clubId}}</th>
+          <td>{{club.clubName}}</td>
+          <td>{{club.countyName}}</td>
+          <td>{{club.stateName}}</td>
+          <td>{{club.greater_regionName}}</td>
+          <td>{{club.nation_name}}</td>
+         
+      </tr>
+  </tbody>
+</table>

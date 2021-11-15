@@ -12,6 +12,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { MessagesComponent } from './messages/messages.component';
 import { PlayerDetailComponent } from './player-detail/player-detail.component';
+import { ClubsComponent } from './clubs/clubs.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { PlayerDetailComponent } from './player-detail/player-detail.component';
     PlayersComponent,
     RankingComponent,
     MessagesComponent,
-    PlayerDetailComponent
+    PlayerDetailComponent,
+    ClubsComponent
   ],
   imports: [
     BrowserModule,
