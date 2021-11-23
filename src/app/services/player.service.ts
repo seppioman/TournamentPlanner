@@ -12,7 +12,9 @@ import { catchError, map, tap } from 'rxjs/operators';
 })
 export class PlayersService {
 
+ 
   private playersUrl = 'http://localhost:3000/players';
+
   constructor(private http: HttpClient,private messageService: MessageService) { }
 
   getPlayers(): Observable<Player[]> {
@@ -37,10 +39,6 @@ export class PlayersService {
     );
   }
 
-  httpOptions = {
-    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
-  };
-
   deletePlayer(id: string): Observable<Player> {
     const url = `${this.playersUrl}/${id}`;
   
@@ -49,6 +47,10 @@ export class PlayersService {
       catchError(this.handleError<Player>('deleteHero'))
     );
   }
+
+  httpOptions = {
+    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+  };
 
 
   private log(message: string) {

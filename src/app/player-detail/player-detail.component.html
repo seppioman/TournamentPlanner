@@ -5,6 +5,7 @@
       <label for="player-Name">Player first name: </label>
       <input id="player-Name" [(ngModel)]="player.first_name" placeholder="Player name"/>
     </div>
-    <button (click)="goBack()">go back</button>
-    <button (click)="save()">save</button>
+    
+    <button class="btn btn-danger" (click)="goBack()">go back</button>
+    <button class="btn btn-succes addBtn" (click)="save()">save</button>
   </div>

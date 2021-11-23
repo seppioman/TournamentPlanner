@@ -21,6 +21,10 @@ export class PlayersComponent implements OnInit {
     this.playerservice.getPlayers()
     .subscribe(players => this.players = players);
   }
+  
+
+
+
 
 
   delete(player: Player): void {

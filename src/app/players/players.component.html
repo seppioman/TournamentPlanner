@@ -7,7 +7,7 @@
 <table class="table" *ngIf="players && players.length > 0">
   <thead>
       <tr>
-          <th scope="col">ID</th>
+          <th scope="col" >ID</th>
           <th scope="col">Sex</th>
           <th scope="col">First Name</th>
           <th scope="col">Last Name</th>
@@ -19,7 +19,9 @@
   </thead>
   <tbody>
       <tr *ngFor="let player of players">
-          <th scope="row">{{player.playerId}}</th>
+        <a routerLink="/players/{{player.playerId}}">
+            <th scope="row">{{player.playerId}}</th>
+          </a>
           <td>{{player.sex}}</td>
           <td>{{player.first_name}}</td>
           <td>{{player.family_name}}</td>
