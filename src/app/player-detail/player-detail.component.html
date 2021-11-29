@@ -1,11 +1,8 @@
 <div *ngIf="player">
     <h2>{{player.first_name | uppercase}} Details</h2>
     <div><span>id: </span>{{player.playerId}}</div>
-    <div>
-      <label for="player-Name">Player first name: </label>
-      <input id="player-Name" [(ngModel)]="player.first_name" placeholder="Player name"/>
-    </div>
+    <h2>{{player.playerId}}</h2>
+
     
-    <button class="btn btn-danger" (click)="goBack()">go back</button>
-    <button class="btn btn-succes addBtn" (click)="save()">save</button>
+    <button class=" btn btn-danger" (click)="goBack()">go back</button>
   </div>

@@ -14,6 +14,7 @@ export class PlayersService {
 
  
   private playersUrl = 'http://localhost:3000/players';
+  
 
   constructor(private http: HttpClient,private messageService: MessageService) { }
 
@@ -27,7 +28,7 @@ export class PlayersService {
   getPlayer(id: string): Observable<Player> {
     const url = `${this.playersUrl}/${id}`;
     return this.http.get<Player>(url).pipe(
-      tap(_ => this.log(`fetched player id=${id}`)),
+      tap(_ => this.log(`fetched player id=${url}`)),
       catchError(this.handleError<Player>(`getplayer id=${id}`))
     );
     

@@ -13,7 +13,9 @@ import { PlayersService } from '../services/player.service';
 export class PlayerDetailComponent implements OnInit {
 
 
-  player: Player | undefined;
+
+    player : Player | undefined
+ 
 
   constructor(
     private route: ActivatedRoute,
@@ -22,20 +24,16 @@ export class PlayerDetailComponent implements OnInit {
     { }
 
   ngOnInit(): void {
-    this.getPlayer()
+    this.getPlayer();
   }
 
   getPlayer(): void {
-    const id = this.route.snapshot.paramMap.get('id')!;
+    const id =  this.route.snapshot.paramMap.get('id')!;
+    console.log(id);
     this.playerService.getPlayer(id)
       .subscribe(player => this.player = player);
   }
 
-  save(): void {
-    if (this.player) {
-      this.playerService.updatePlayer(this.player)
-        .subscribe(() => this.goBack());
-    }}
 
     goBack(): void {
       this.location.back();

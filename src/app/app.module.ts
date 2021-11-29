@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { ReactiveFormsModule } from '@angular/forms'
 import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { ArticleComponent } from './article/article.component';
@@ -13,6 +14,7 @@ import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { MessagesComponent } from './messages/messages.component';
 import { PlayerDetailComponent } from './player-detail/player-detail.component';
 import { ClubsComponent } from './clubs/clubs.component';
+import { PlayerFormComponentComponent } from './player-form-component/player-form-component.component';
 
 
 @NgModule({
@@ -25,10 +27,12 @@ import { ClubsComponent } from './clubs/clubs.component';
     RankingComponent,
     MessagesComponent,
     PlayerDetailComponent,
-    ClubsComponent
+    ClubsComponent,
+    PlayerFormComponentComponent
   ],
   imports: [
     BrowserModule,
+    ReactiveFormsModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule

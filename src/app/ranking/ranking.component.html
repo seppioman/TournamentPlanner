@@ -1,6 +1,10 @@
 <h1>Ranking</h1>
 <h2>This is the ranking of all players:</h2>
     
+<div class="form-group">
+
+    <input type="text" class="form-control" placeholder="Search By Name" style="width: 300px" [(ngModel)]="searchTerm">    
+</div>
 
 <table class="table" *ngIf="rankings && rankings.length > 0">
   <thead>

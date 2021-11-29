@@ -19,7 +19,7 @@
   </thead>
   <tbody>
       <tr *ngFor="let player of players">
-        <a routerLink="/players/{{player.playerId}}">
+        <a routerLink="/detail/{{player.playerId}}">
             <th scope="row">{{player.playerId}}</th>
           </a>
           <td>{{player.sex}}</td>
