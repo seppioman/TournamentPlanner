@@ -3,6 +3,9 @@ import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 import { Player } from '../services/player';
 import { PlayersService } from '../services/player.service';
+import { MessageService } from '../services/message.service';
+import { catchError, map, tap } from 'rxjs/operators';
+
 
 
 @Component({
@@ -12,15 +15,13 @@ import { PlayersService } from '../services/player.service';
 })
 export class PlayerDetailComponent implements OnInit {
 
-
-
-    player : Player | undefined
- 
+   player: Player = new Player();
 
   constructor(
     private route: ActivatedRoute,
     private playerService: PlayersService,
-    private location: Location) 
+    private location: Location,
+    private messageService: MessageService ) 
     { }
 
   ngOnInit(): void {
@@ -29,9 +30,11 @@ export class PlayerDetailComponent implements OnInit {
 
   getPlayer(): void {
     const id =  this.route.snapshot.paramMap.get('id')!;
-    console.log(id);
     this.playerService.getPlayer(id)
       .subscribe(player => this.player = player);
+      this.messageService.add((this.player).toString());
+      this.messageService.add(this.player.playerId);
+     
   }
 
 

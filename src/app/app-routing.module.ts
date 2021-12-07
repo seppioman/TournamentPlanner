@@ -9,8 +9,8 @@ import {ClubsComponent} from './clubs/clubs.component';
 import {PlayerDetailComponent} from './player-detail/player-detail.component'
 
 const routes: Routes = [
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
-  { path: 'home', component: HomeComponent },
+  { path: '', redirectTo:'/home',pathMatch:'full' },
+  { path:'home' , component: HomeComponent},
   { path: 'article', component: ArticleComponent },
   { path: 'detail/:id', component: PlayerDetailComponent },
   { path: 'players', component: PlayersComponent },

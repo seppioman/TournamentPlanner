@@ -10,4 +10,5 @@ export interface Ranking {
     Points:number;
     GesPoints:number;
     Tournaments:string;
+    clubname: string;
   }

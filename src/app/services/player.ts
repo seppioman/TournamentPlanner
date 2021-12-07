@@ -7,14 +7,12 @@ export interface Player {
     clubId: string
     nation_name?: string;
     birthDate: string;
+    countyName:string;
+    stateName:string;
+    greater_regionName:string;
   }
   export class Player {
-    constructor(
-      playerId: string,
-      sex: string,
-      first_name: string,
-      family_name: string,
-      birthDate: string,
-      clubId: string
-    ){}
-    }
+
+  }
+ 
+    

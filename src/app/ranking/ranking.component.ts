@@ -10,22 +10,98 @@ import { Ranking } from '../services/ranking';
 export class RankingComponent implements OnInit {
 
   rankings: Ranking[] = [];
+  filter: Ranking[] = [];
   filteredRankings: Ranking[] = [];
-  private _searchTerm : string = "";
+  private _searchTermName : string = "";
+  private _searchTermClub : string = "";
+  private _searchTermDiscipline: string ="";
 
-  get searchTerm():string{
-    return this._searchTerm;
+  get searchTermName():string{
+    return this._searchTermName;
   }
 
-  set searchTerm(value: string){
-    this._searchTerm = value;
-    this.filteredRankings = this.filterRankings(value);
+  set searchTermName(value: string)
+  {
+    this._searchTermName = value;
+    this.filteredRankings = this.filterRankingsName(value);
+
   }
 
-  filterRankings(searchString: string){
-
-    return this.rankings.filter(ranking => ranking.family_Name.toLowerCase().indexOf(searchString.toLowerCase()) !==-1)
+  get searchTermClub():string{
+    return this._searchTermClub;
   }
+
+  set searchTermClub(value: string)
+  {
+    this._searchTermClub = value;
+
+    this.filteredRankings = this.filterRankingsClub(value);
+
+  }
+  get searchTermDiscipline():string{
+    return this._searchTermDiscipline;
+  }
+
+  set searchTermDiscipline(value: string)
+  {
+    this._searchTermDiscipline = value;
+    this.filteredRankings = this.filterRankingsDiscipline(value);
+
+  }
+
+
+  filterRankingsName(searchString: string){
+
+    if(searchString != ""){
+
+      return this.filteredRankings.filter(ranking => ranking.family_Name.toLowerCase().indexOf(searchString.toLowerCase()) !==-1)
+    }
+    else{
+      
+        return this.rankings;
+      
+    }
+
+    
+  }
+  filterRankingsClub(searchString: string){
+
+    if(searchString != ""){
+
+      return this.filteredRankings.filter(ranking => ranking.clubname.toLowerCase().indexOf(searchString.toLowerCase()) !==-1)
+    }
+    else{
+
+  
+      
+        return this.rankings;
+      
+      
+    }
+
+    
+  }
+  filterRankingsDiscipline(searchString: string){
+
+    if(searchString != ""){
+
+      return this.filteredRankings.filter(ranking => ranking.Discipline.toLowerCase().indexOf(searchString.toLowerCase()) !==-1)
+    }
+    else{
+      
+        return this.rankings;
+      
+    }
+
+    
+  }
+
+  clear(){
+    this.searchTermClub = "";
+    this.searchTermName = "";
+    this.searchTermDiscipline = "";
+  }
+
 
 
   constructor(private rankingservice: RankingService) { }
@@ -37,6 +113,9 @@ export class RankingComponent implements OnInit {
   getRankings(): void {
       this.rankingservice.getRankings()
     .subscribe(rankings => this.rankings = rankings);
+
+    this.rankingservice.getRankings()
+    .subscribe(rankings => this.filteredRankings = rankings)
     
   }
 

@@ -3,7 +3,21 @@
     
 <div class="form-group">
 
-    <input type="text" class="form-control" placeholder="Search By Name" style="width: 300px" [(ngModel)]="searchTerm">    
+    <input type="text"  class="form-control" placeholder="Search By Name" style="width: 300px" [(ngModel)]="searchTermName">    
+    <input type="text" class="form-control" placeholder="Search By Club" style="width: 300px" [(ngModel)]="searchTermClub">
+    <select [(ngModel)]="searchTermDiscipline">
+        <option value="" disabled selected hidden>Discipline</option>
+        <option Value="HE">HE</option>
+        <option  Value="DE">DE</option>
+        <option  Value="HD">HD</option>
+        <option  Value="DD">DD</option>
+        <option  Value="HM">HM</option>
+        <option  Value="DM">DM</option>
+
+    </select>
+    <p></p>
+    <button class="btn btn-danger" (click)="clear()">Clear Search Terms</button>
+
 </div>
 
 <table class="table" *ngIf="rankings && rankings.length > 0">
@@ -19,11 +33,12 @@
           <th scope="col">Birthdate</th>
           <th scope="col">Points</th>
           <th scope="col">GesPoints</th>
+          <th scope="col">Club</th>
           <th scope="col">Tournaments</th>
       </tr>
   </thead>
   <tbody>
-      <tr *ngFor="let ranking of rankings">
+      <tr *ngFor="let ranking of filteredRankings">
           <th scope="row">{{ranking.Discipline}}</th>
           <td>{{ranking.Ranking}}</td>
           <td>{{ranking.FRanking}}</td>
@@ -34,6 +49,7 @@
           <td>{{ranking.birthDate}}</td>
           <td>{{ranking.Points}}</td>
           <td>{{ranking.GesPoints}}</td>
+          <td>{{ranking.clubname}}</td>
           <td>{{ranking.Tournaments}}</td>
          
       </tr>
