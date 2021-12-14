@@ -15,4 +15,6 @@ The database is made in MySQL workbench. The scheme of my application in MySQL W
 The API is a expressJS project that can be found in the folder TournamentPlannerAPI. In the mySQLClient.js file all the different CRUD functions are defined and the connection with the database is made. Be sure to check that the credentials of the connection string are correct for your database connection. In the index.js file all functionalities are used for the different routes that you can access through the internet. To be able to run the API you have to install the MySQL2 package with this command: npm install --save mysql2. After you installed the package you can always use "node index.js" in the terminal to start up the API. 
 
 
-# Application
+# Angular SPA
+
+The main Application is build in the Angular framework and is connected to the running API. The application is split up in different components and their services. To run the application you first have to install Node.js: https://nodejs.org/en/ and after that install the angular-devkit package through executing npm install --save-dev @angular-devkit/build-angular in the terminal. Now you only have to type in ng serve into the terminal and your application will be build and accessible via http://localhost:4200/ .
