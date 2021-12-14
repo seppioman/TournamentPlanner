@@ -12,5 +12,7 @@ The database is made in MySQL workbench. The scheme of my application in MySQL W
 
 # API
 
+The API is a expressJS project that can be found in the folder TournamentPlannerAPI. In the mySQLClient.js file all the different CRUD functions are defined and the connection with the database is made. Be sure to check that the credentials of the connection string are correct for your database connection. In the index.js file all functionalities are used for the different routes that you can access through the internet. To be able to run the API you have to install the MySQL2 package with this command: npm install --save mysql2. After you installed the package you can always use "node index.js" in the terminal to start up the API. 
+
 
 # Application
