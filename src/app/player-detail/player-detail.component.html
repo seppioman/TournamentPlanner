@@ -1,14 +1,14 @@
 <div *ngIf="player">
     <h2>{{player.first_name | uppercase}} {{player.family_name | uppercase}}  Details</h2>
-    <div><span>id:</span>{{player.playerId}}</div>
-    <div><span>Sex:</span>{{player.sex}}</div>
-    <div><span>First Name:</span>{{player.first_name}}</div>
-    <div><span>Last Name:</span>{{player.family_name}}</div>
-    <div><span>Birthdate:</span>{{player.birthDate}}</div>
-    <div><span>Club:</span>{{player.clubName}}</div>
-    <div><span>County:</span>{{player.countyName}}</div>
-    <div><span>State:</span>{{player.stateName}}</div>
-    <div><span>Nation:</span>{{player.greater_regionName}}</div>
+    <div><span>id:</span> {{player.playerId}}</div>
+    <div><span>Sex:</span> {{player.sex}}</div>
+    <div><span>First Name:</span> {{player.first_name}}</div>
+    <div><span>Last Name:</span> {{player.family_name}}</div>
+    <div><span>Birthdate:</span> {{player.birthDate}}</div>
+    <div><span>Club:</span> {{player.clubName}}</div>
+    <div><span>County:</span> {{player.countyName}}</div>
+    <div><span>State:</span> {{player.stateName}}</div>
+    <div><span>Nation:</span> {{player.greater_regionName}}</div>
 
     <button class=" btn btn-danger" (click)="goBack()">go back</button>
   </div>

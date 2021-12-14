@@ -5,6 +5,7 @@ import { Player } from '../services/player';
 import { PlayersService } from '../services/player.service';
 import { MessageService } from '../services/message.service';
 import { catchError, map, tap } from 'rxjs/operators';
+import { Observable } from 'rxjs/internal/Observable';
 
 
 
@@ -15,26 +16,27 @@ import { catchError, map, tap } from 'rxjs/operators';
 })
 export class PlayerDetailComponent implements OnInit {
 
-   player: Player = new Player();
+  player: Player | undefined;
 
   constructor(
     private route: ActivatedRoute,
     private playerService: PlayersService,
     private location: Location,
     private messageService: MessageService ) 
-    { }
+    { 
+       
+    
+    }
 
   ngOnInit(): void {
     this.getPlayer();
+    console.log(this.player);
   }
 
   getPlayer(): void {
     const id =  this.route.snapshot.paramMap.get('id')!;
     this.playerService.getPlayer(id)
-      .subscribe(player => this.player = player);
-      this.messageService.add((this.player).toString());
-      this.messageService.add(this.player.playerId);
-     
+    .subscribe(player => this.player = player)
   }
 
 

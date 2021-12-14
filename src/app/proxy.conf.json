@@ -1,5 +1,5 @@
 {
-    "/players": {
+    "/api": {
       "target": "http://localhost:3000/players",
       "secure": false,
       "changeOrigin": true

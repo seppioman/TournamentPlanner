@@ -3,7 +3,7 @@
 <h2>This is a list of all the registered players:</h2>
 
 
-<button type="button" class="btn btn-success addBtn" ><i class="fas fa-plus"></i> Add new Player</button>
+<button type="button" (click)="add()" class="btn btn-success addBtn" ><i class="fas fa-plus"></i> Add new Player</button>
 <table class="table" *ngIf="players && players.length > 0">
   <thead>
       <tr>
@@ -19,8 +19,8 @@
   </thead>
   <tbody>
       <tr *ngFor="let player of players">
-        <a routerLink="/detail/{{player.playerId}}">
-            <th scope="row">{{player.playerId}}</th>
+          <a routerLink="/detail/{{player.playerId}}">
+            <th>{{player.playerId}}</th>
           </a>
           <td>{{player.sex}}</td>
           <td>{{player.first_name}}</td>
@@ -30,7 +30,7 @@
           <td>{{player.nation_name}}</td>
          
           <td>
-              <button type="button" class="btn btn-success" ><i class="fas fa-edit"></i></button>
+              <button type="button" class="btn btn-success" (click)="edit(player.playerId)" ><i class="fas fa-edit"></i></button>
               <button type="button" class="btn btn-danger" (click)="delete(player)"><i class="far fa-trash-alt"></i></button>
           </td>
       </tr>

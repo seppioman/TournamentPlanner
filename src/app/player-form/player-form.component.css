@@ -1,0 +1,12 @@
+select {
+    display: block;
+    width: 100%;
+  
+    box-sizing: border-box;
+  }
+  option {
+    display: block;
+    width: 100%;
+    
+    box-sizing: border-box;
+  }

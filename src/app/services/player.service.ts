@@ -25,7 +25,7 @@ export class PlayersService {
       catchError(this.handleError<Player[]>('getPlayers', []))
     );
   }
-  getPlayer(id: string): Observable<Player> {
+  getPlayer(id: String): Observable<Player> {
     const url = `${this.playersUrl}/${id}`;
     return this.http.get<Player>(url).pipe(
       tap(_ => this.log(`fetched player id=${url}`)),
@@ -33,12 +33,20 @@ export class PlayersService {
     );
     
   }
-  updatePlayer(player: Player): Observable<any> {
-    return this.http.put(this.playersUrl, player, this.httpOptions).pipe(
-      tap(_ => this.log(`updated hero id=${player.playerId}`)),
-      catchError(this.handleError<any>('updateHero'))
-    );
-  }
+  updatePlayer(id:String, player: Player): Observable<Player> {
+    let headers = new HttpHeaders();
+    headers = headers.set('Content-Type', 'application/json; charset=utf-8');
+    console.log(player)
+    return this.http.put<Player>(this.playersUrl + "/" + id, player, {headers: headers});
+}
+  addPlayer(player: Player): Observable<Player> {
+    let headers = new HttpHeaders();
+    headers = headers.set('Content-Type', 'application/json; charset=utf-8');
+
+    return this.http.post<Player>(this.playersUrl, player, {headers: headers});
+}
+
+
 
   deletePlayer(id: string): Observable<Player> {
     const url = `${this.playersUrl}/${id}`;

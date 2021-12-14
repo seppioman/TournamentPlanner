@@ -1,6 +1,14 @@
 <h1>Clubs</h1>
 <h2>This is a list of all the registered Clubs:</h2>
+<div class="form-group">
 
+ 
+    <input type="text" class="form-control" placeholder="Search By Club" style="width: 300px" [(ngModel)]="searchTermClub">
+
+    <p></p>
+    <button class="btn btn-danger" (click)="clear()">Clear Search Term</button>
+
+</div>
 
 <table class="table" *ngIf="clubs && clubs.length > 0">
   <thead>
@@ -14,7 +22,7 @@
       </tr>
   </thead>
   <tbody>
-      <tr *ngFor="let club of clubs">
+      <tr *ngFor="let club of filteredClubs">
           <th scope="row">{{club.clubId}}</th>
           <td>{{club.clubName}}</td>
           <td>{{club.countyName}}</td>

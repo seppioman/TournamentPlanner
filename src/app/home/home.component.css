@@ -13,6 +13,7 @@ article {
 img {
     max-width: 100%;
     height:auto;
+    
 }
 
 figure {
@@ -31,4 +32,10 @@ article p {
 article footer {
     font-style:italic;
     font-variant:small-caps;
+}
+main{
+
+margin: auto;
+
+
 }

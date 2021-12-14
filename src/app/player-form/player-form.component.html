@@ -1,0 +1,29 @@
+<h1>Add/Edit Player</h1>
+<div class="alert alert-danger" role="alert" *ngIf="isSubmitted && errorMessage">
+    {{errorMessage}}
+  </div>
+  <form (ngSubmit)="onSubmit()" #categoryForm="ngForm">
+    <div class="form-group">
+
+        <label for="sex">Sex:</label>
+        <select class="form-control" [(ngModel)]="player.sex" id="sex" name="sex"  #name="ngModel">
+            <option value="" disabled selected hidden>Sex</option>
+            <option Value="Male" >Male</option>
+            <option  Value="Female">Female</option>
+        </select>
+      <label for="family_name">Last Name:</label>
+      <input type="text" class="form-control" id="family_name" name="family_name" placeholder="Family Name" [(ngModel)]="player.family_name" #name="ngModel" required>
+      <label for="first_name">First Name:</label>
+      <input type="text" class="form-control" id="first_name" name="first_name" placeholder="First Name" [(ngModel)]="player.first_name" #name="ngModel" required>
+      <label for="birthdate">Birthdate:</label>
+      <input type="text" class="form-control" id="birthdate" name="birthdate" placeholder="Birthyear" [(ngModel)]="player.birthDate" #name="ngModel" required>
+
+      <label for="clubId">Club:</label>
+      <select class="form-control"  id="clubId" [(ngModel)]="player.clubId" name="clubId"  #name="ngModel">
+          <option *ngFor="let club of clubs" [ngValue]="club.clubId">{{club.clubName}}</option>
+      </select>
+      
+    </div>
+    <button type="submit" class="btn btn-primary" *ngIf="isAdd" [disabled]="!categoryForm.form.valid || isSubmitted">Add</button>
+    <button type="submit" class="btn btn-primary" *ngIf="isEdit" [disabled]="!categoryForm.form.valid || isSubmitted">Save</button>
+  </form>

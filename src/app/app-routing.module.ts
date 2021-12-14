@@ -7,6 +7,7 @@ import { PlayersComponent } from './players/players.component';
 import {RankingComponent} from './ranking/ranking.component';
 import {ClubsComponent} from './clubs/clubs.component';
 import {PlayerDetailComponent} from './player-detail/player-detail.component'
+import {PlayerFormComponent} from './player-form/player-form.component'
 
 const routes: Routes = [
   { path: '', redirectTo:'/home',pathMatch:'full' },
@@ -16,9 +17,7 @@ const routes: Routes = [
   { path: 'players', component: PlayersComponent },
   { path: 'ranking', component: RankingComponent },
   { path: 'clubs', component: ClubsComponent },
-  
-  
-
+  { path: 'players/form', component: PlayerFormComponent },
 ];
 
 @NgModule({
