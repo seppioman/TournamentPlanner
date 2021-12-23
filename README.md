@@ -21,7 +21,7 @@ The main application is built in the Angular framework and is connected to the r
 
 # Ilab-Stud
 
-If you are using my Angular application on Ilab-Stud then everything is already installed and the database is already filled with dummy data. You can find a video on how to run the application in ilab-stud at this location: C:\Users\geuds1\Seppe_Geudens_TournamentPlanner_Case named Startup-Tutorial.
+If you are using my Angular application on Ilab-Stud then everything is already installed and the database is already filled with dummy data. You can find a video on how to run the application in ilab-stud at this location: C:\Users\geuds1\Seppe_Geudens_TournamentPlanner_Case named Startup-Tutorial.mp4 .
 
 #  ScreenCast of Front End
 https://www.youtube.com/watch?v=08u5UZxZSw4
