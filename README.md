@@ -25,3 +25,5 @@ If you are using my Angular application on Ilab-Stud then everything is already 
 
 #  ScreenCast of Front End
 https://www.youtube.com/watch?v=08u5UZxZSw4
+
+BFH / CASE / WI
