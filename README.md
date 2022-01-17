@@ -26,4 +26,6 @@ If you are using my Angular application on Ilab-Stud then everything is already 
 #  ScreenCast of Front End
 https://www.youtube.com/watch?v=08u5UZxZSw4
 
-BFH / CASE / WI
+#  Project Context
+
+This work has been conducted in a student project at the Bern University of Applied Sciences (BUAS) in the bachelor study program https://www.bfh.ch/en/studies/bachelor/business-information-technology/ (supervisor Eduard Klein).
